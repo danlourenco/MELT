@@ -1,0 +1,7 @@
+{
+  "name": "MEDITECH Troubleshooting Tool",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Helpful tools to expedite troubleshooting in a MEDITECH environment.",
+  "browser_action": {"default_icon": "meditech.png", "default_popup": "popup.html" }
+}

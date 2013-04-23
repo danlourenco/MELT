@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+
+    <!-- Shouts to http://www.cparker15.com/code/utilities/csv-to-json/ for json conversion tool -->
+
+    <title>MELT - MEDITECH Error Lookup Tool</title>
+    <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link href="css/meditech-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="js/jquery-1.8.3.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
+    
+  </head>
+  <body>
+    <h1>MELT - MEDITECH Error Lookup Tool</h1>
+    
+
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Windows</a></li>
+      <li><a href="#tabs-2">ANP</a></li>
+      <li><a href="#tabs-3">Task Server</a></li>
+      <li><a href="#tabs-4">WinSock</a></li>
+    </ul>
+
+
+    <!-- Windows Error Lookup Tab -->
+    <div id="tabs-1">
+      <p> Enter a Windows Error number (hex) in the field below.  The error you enter will be converted to decimal, and will be described in the description field below.
+      <form>
+          <label for="hex">Hex</label><br>
+          <input type="text" placeholder="Hex Number" id="hex" size="12">
+
+          <br><br>
+          
+          <label for="result">Decimal</label><br><input type="text" id="result" size="12">
+
+          <br><br>
+
+          <label for="errordesc">Description</label><br>
+          <textarea id="errordesc" cols="54" rows="4"> </textarea>
+         <!--  <textarea id="errordesc" cols="50" rows="3"></textarea> -->
+        </form>
+
+
+    </div> <!-- /Windows Error Lookup -->
+
+    <!-- ANP Error Lookup Tab -->
+    <div id="tabs-2">
+      
+      <h3>ANP Event Log Error Lookup</h3>
+      <form>
+        <label for="anpErrNum">Event ID</label> <br>
+        <input type="text" placeholder="" id="anpErrNum">
+
+        <br><br>
+
+        <label for="phase" class="phase">Phase</label><br>
+        <input type="text" class="phase" placeholder="" id="phase">
+
+        <br><br>
+
+        <label for="errordescANP">Description</label><br>
+        <textarea id="errordescANP" cols="54" rows="4"> </textarea>
+
+        <label for="phaseInfo" class="phase">Phase Info</label><br>
+        <textarea id="phaseInfo" class="phase" cols="54" rows="4"> </textarea>
+      </form>
+
+
+    </div> <!-- /ANP Error Lookup Tab -->
+
+
+    <div id="tabs-3">
+      
+      <h3>TaskServer Error Lookup </h3>
+      <form>
+        <label for ="taskServerErrNum">Task Server Error Number</label> <br>
+        <input type="text" placeholder="" id="taskServerErrNum">
+
+        <br><br>
+
+          <label for="errorDescTaskServer">Description</label><br>
+          <textarea id="errorDescTaskServer" cols="54" rows="4"> </textarea>
+      </form>
+    
+    </div>
+
+     <div id="tabs-4">
+      <!-- courtesy of http://kb.globalscape.com/KnowledgebaseArticle10140.aspx --> 
+       
+       <h3>WinSock Error Lookup </h3>
+      <form>
+        <label for ="winsockErrNum">Winsock Error Number</label> <br>
+        <input type="text" placeholder="" id="winsockErrNum">
+
+        <br><br>
+
+          <label for="winsockErrDesc">Description</label><br>
+          <textarea id="winsockErrDesc" cols="54" rows="8"> </textarea>
+      </form>
+
+     </div>
+  
+
+
+
+
+     <!-- JavaScript and HTML must be in separate files for security. -->
+     <script src="popup.js"></script> 
+      
+    </body>
+</html>

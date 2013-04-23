@@ -1,0 +1,22 @@
+body {
+  min-width:500px;
+  overflow-x:hidden;
+  font-family: Helvetica;
+  font-size: 0.8em;
+
+}
+
+
+h1{
+  text-align: center;
+  font-family: Helvetica;
+}
+
+
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
