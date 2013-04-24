@@ -118,6 +118,7 @@ function ajaxCall(dataUrl, callback) {
                 // searchValue;
 
 
+
             ajaxCall('data/errorcodes.json', function (data) {
 
                 // http://training.bocoup.com/screencasts/dry-out-your-code-with-objects/
@@ -157,8 +158,12 @@ function ajaxCall(dataUrl, callback) {
                        
                         if ((selected === 1) && (errorType.searchValue === "3" || errorType.searchValue === "5")) {
                         
+
                             $(".phase").show();
                             
+                        } else {
+                            $(".phase").innerHTML = "";
+                            $(".phase").hide();
                         }
 
                         break;
