@@ -16,7 +16,7 @@ function ajaxCall(dataUrl, callback) {
     
     /* use our function to get the correct Ajax object based on support */
     var request = getHTTPObject();
-    //outputElement.innerHTML = "Please enter a valid number";
+    
       
     request.onreadystatechange = function () {
         
@@ -24,12 +24,12 @@ function ajaxCall(dataUrl, callback) {
         if (request.readyState === 4 && request.status === 200) {
             
             // save the ajax response to a variable
-            var allErrorsJSONObject = JSON.parse(request.responseText);
+            var data = JSON.parse(request.responseText);
             
             // make sure the callback is indeed a function before executing it
             if (typeof callback === "function") {
             
-                callback(allErrorsJSONObject);
+                callback(data);
             
             } // end check
     
@@ -56,7 +56,7 @@ function ajaxCall(dataUrl, callback) {
         anpErrorNumber = document.getElementById("anpErrNum"),
         taskServerErrorNumber = document.getElementById("taskServerErrNum"),
         winsockErrorNumber = document.getElementById("winsockErrNum"),
-        phase = document.getElementById("phase");
+        phaseNumber = document.getElementById("phaseField");
     
         $( "#tabs" ).tabs({ heightStyle: "auto" });
         $(".phase").hide();
@@ -84,6 +84,7 @@ function ajaxCall(dataUrl, callback) {
                         count = winErrorCodes.length,
                         i,
                         searchValue = decVal.value;
+
                     if (count > 0 && searchValue !== "") {
           
                         for (i = 0; i < count; i++) {
@@ -104,6 +105,7 @@ function ajaxCall(dataUrl, callback) {
         
 	    }; // end winError object
     
+
     var genericError = {
         
  
@@ -150,7 +152,6 @@ function ajaxCall(dataUrl, callback) {
                 for (i = 0; i < count; i++) {
                     var obj = errorType.errorCodes[i];
 
-
                     if (obj.code === errorType.searchValue) {
                         errorType.output.innerHTML = obj.desc;
                        
@@ -169,7 +170,41 @@ function ajaxCall(dataUrl, callback) {
 
             }); // end AJAX call
     
-        } //end search
+        }, //end search
+
+        phaseSearch: function(event) {
+            
+            var output = document.getElementById("phaseInfo");
+
+
+
+            ajaxCall('data/errorcodes.json', function (data) {
+
+                var count,
+                    i,
+                    searchValue = document.getElementById("phaseField").value,
+                    phaseData;
+
+                if (anpErrorNumber.value === "3") {
+                    phaseData = data.event3phase,
+                    count = phaseData.length;
+                } 
+
+                for (i = 0; i < count; i++) {
+                    var obj = phaseData[i];
+
+                    if (obj.code === searchValue) {
+                        output.innerHTML = obj.desc;
+                        break;
+                    } else {
+                        output.innerHTML = "Please enter a valid phase";
+                    }
+                }
+
+
+            }); // end AJAX call
+
+        } // end phaseSearch
     
         
     }; // end genricError
@@ -180,7 +215,7 @@ function ajaxCall(dataUrl, callback) {
     hexVal.addEventListener("keyup", winError.search, false);
 
     anpErrorNumber.addEventListener("keyup", genericError.search, false);
-    phase.addEventListener("keyUp", genericError.search, false);
+    phaseNumber.addEventListener("keyup", genericError.phaseSearch, false);
     taskServerErrorNumber.addEventListener("keyup", genericError.search, false);
     winsockErrorNumber.addEventListener("keyup", genericError.search, false);
   
