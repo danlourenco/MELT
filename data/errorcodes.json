@@ -13143,6 +13143,54 @@
 	{
 		"code": "3",
 		"desc": "This entry indicates an error or exception has occurred in the dispatcher thread.  The Error Source in the Description field is 'Dispatcher' for an error and 'Dispatcher Exception' for an exception."
+	},
+	{
+		"code": "4",
+		"desc": "This entry indicates an error or exception has occured in a worker thread.  The Error Source in the Description field is 'Worker' for an error and 'Worker Exception' for an exception."
+	},
+	{
+		"code": "5",
+		"desc": "This entry indicates an error or exception has occured in a replication (log) thread.  The Error Source in the Description field is 'Log' for an error and 'Log Exception' for an exception."
+	},
+	{
+		"code": "6",
+		"desc": "This entry indicates ANPServer is stopping.  If the value for Stopcode is <256, ANPServer's service callback function was called by the OS with that code.  Refer to stxwiki/M-ATv10 for more info."
+	},
+	{
+		"code": "7",
+		"desc": "This entry has information about the progress of replication."
+	},
+	{
+		"code": "8",
+		"desc": "This entry has information relating to file change notification."
+	},
+	{
+		"code": "9",
+		"desc": "This entry indicates an error has been encountered relating to a .MTIO file.  It may either be a problem with the structure of the file, or an error returned by a file API."
+	},
+	{
+		"code": "10",
+		"desc": "This entry indicates an error has been encountered relating to a .MTJO file.  It may be either a problem with the structure of the file, or an error returned by a file API."	
+	},
+	{
+		"code": "11",
+		"desc": "This entry indicates ANPServer has started listening for client connection attempts and specifies the port number."
+	},
+	{
+		"code": "12",
+		"desc": "This entry indicates a .MTJO file has been repaired using the associated .MTJZ file."
+	},
+	{
+		"code": "13",
+		"desc": "This entry indicates an attempt to close the wrong type of handle."
+	},
+	{
+		"code": "14",
+		"desc": "This entry indicates an error was returned by CloseHandle."
+	},
+	{
+		"code": "15",
+		"desc": "This entry indicates a problem was found with a worker thread's state at command completion."
 	}
 ],
 
@@ -13186,7 +13234,167 @@
 	{
 		"code": "600",
 		"desc": "Authentication initialization failed.  For MSO, Error ID = 'Error Code = 0xffffffff -1'. For SSPI, Error Id = text string describing the OS error."
+	},
+	{
+		"code": "800",
+		"desc": "Replication initialization failed.  Error Id = text string describing the OS error or Error Id = 'Error Code = x', where x indicates the specific error."
+	},
+	{
+		"code": "900",
+		"desc": "Listening socket initialization failed.  Error ID = text string describing Winsock error."
+	},
+	{
+		"code": "1200",
+		"desc": "MttoTime initialization failed.  If due to an OS error, Error ID = text string describing the OS error.  Otherwise, Error ID = 'Error Code = x', where x indicates the specific error."
+	},
+	{
+		"code": "1400",
+		"desc": "ANPMagic initialization failed.  Error ID = 'Error Code = 0xffffffff - 1"
+	},
+	{
+		"code": "1600",
+		"desc": "Current Values structure initialization failed.  Error ID = text string describing the OS error."
+	},
+	{
+		"code": "1700",
+		"desc": "ANPServer intialization completed without error."
 	}
+],
+
+"event5phase" : [
+	{
+		"code": "101",
+		"desc": "positioning in !IP"
+	},
+	{
+		"code": "102",
+		"desc": "getting socket to connect to server"
+	},
+	{
+		"code": "103",
+		"desc": "connecting to server"
+	},
+	{
+		"code": "104",
+		"desc": "set transmit timeout"
+	},
+	{
+		"code": "105",
+		"desc": "set receive timeout"
+	},
+	{
+		"code": "106",
+		"desc": "CypherSetup command"
+	},
+	{
+		"code": "107",
+		"desc": "read header"
+	},
+	{
+		"code": "108",
+		"desc": "size = 0"
+	},
+	{
+		"code": "109",
+		"desc": "read body"
+	},
+	{
+		"code": "110",
+		"desc": "body size ~= 32"
+	},
+	{
+		"code": "111",
+		"desc": "PushTransaction command"
+	},
+	{
+		"code": "112",
+		"desc": "read header"
+	},
+	{
+		"code": "113",
+		"desc": "header type > 3"
+	},
+	{
+		"code": "114",
+		"desc": "size > DefaultInBufferSize"
+	},
+	{
+		"code": "115",
+		"desc": "error header type & size ~= 8"
+	},
+	{
+		"code": "116",
+		"desc": "read body"
+	},
+	{
+		"code": "117",
+		"desc": "error header type"
+	},
+	{
+		"code": "118",
+		"desc": "write transaction to !IP"
+	},
+	{
+		"code": "200",
+		"desc": "set position in log file"
+	},
+	{
+		"code": "201",
+		"desc": "read header from !IP"
+	},
+	{
+		"code": "202",
+		"desc": "0x80000000 bit not on in header msgSize"
+	},
+	{
+		"code": "203",
+		"desc": "msgSize > DefaultInBufferSize"
+	},
+	{
+		"code": "204",
+		"desc": "read body from !IP"
+	},
+	{
+		"code": "205",
+		"desc": "apply transaction"
+	},
+	{
+		"code": "206",
+		"desc": "position in !IP"
+	},
+	{
+		"code": "207",
+		"desc": "compress file"
+	},
+	{
+		"code": "300",
+		"desc": "open LogFile"
+	},
+	{
+		"code": "301",
+		"desc": "get FileSize"
+	},
+	{
+		"code": "302",
+		"desc": "check filesize/BOD"
+	},
+	{
+		"code": "303",
+		"desc": "position in LogFile to BOD"
+	},
+	{
+		"code": "304",
+		"desc": "skip over data to be compressed"
+	},
+	{
+		"code": "305",
+		"desc": "position in LogFile after data to be compressed"
+	},
+	{
+		"code": "306",
+		"desc": "compress file"
+	}
+
 ],
 
 "taskServerCodes" :	[

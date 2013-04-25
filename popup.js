@@ -50,7 +50,7 @@ function ajaxCall(dataUrl, callback) {
 (function () {
 	
 	var button = document.getElementById("convert"),
-	    hexVal = document.getElementById("hex"),
+        hexVal = document.getElementById("hex"),
         decVal = document.getElementById("result"),
 		target = document.getElementById("errordesc"),
         anpErrorNumber = document.getElementById("anpErrNum"),
@@ -73,12 +73,12 @@ function ajaxCall(dataUrl, callback) {
            
             },
 
-		    // search method
-		    search: function (event) {
+            // search method
+            search: function (event) {
 
-			    var output = document.getElementById("errordesc");
+                var output = document.getElementById("errordesc");
 
-			    ajaxCall('data/errorcodes.json', function (data) {
+                ajaxCall('data/errorcodes.json', function (data) {
 
                     var winErrorCodes = data.winErrCodes,	// "data" is the contents of the JSON file, "errorCodes" is the Win32 error object inside. 
                         count = winErrorCodes.length,
@@ -99,11 +99,11 @@ function ajaxCall(dataUrl, callback) {
                         
                     } // end if count check
 
-			    }); // end AJAX call
+                }); // end AJAX call
                 
-		    } // end search method
+            } // end search method
         
-	    }; // end winError object
+        }; // end winError object
     
 
     var genericError = {
@@ -167,8 +167,17 @@ function ajaxCall(dataUrl, callback) {
                         }
 
                         break;
+                    
                     } else {
+<<<<<<< HEAD
+                        $(".phase").hide();
+                        $("#phase").innerHTML = "";
                         errorType.output.innerHTML = "Please enter a valid error code."
+=======
+                    
+                        errorType.output.innerHTML = "Please enter a valid error code.";
+                    
+>>>>>>> 57da068bbc6e0069870b865ce29642d57433d02e
                     }
                 } // end for
 
@@ -191,15 +200,32 @@ function ajaxCall(dataUrl, callback) {
                     phaseData;
 
                 if (anpErrorNumber.value === "3") {
-                    phaseData = data.event3phase,
-                    count = phaseData.length;
+                    phaseData = data.event3phase;
                 } 
+
+                if (anpErrorNumber.value === "5") {
+                    phaseData = data.event5phase;
+
+                }
+
+                count = phaseData.length;
 
                 for (i = 0; i < count; i++) {
                     var obj = phaseData[i];
 
+                    var moreInfo = "";
+
                     if (obj.code === searchValue) {
-                        output.innerHTML = obj.desc;
+
+                        if (searchValue > 100 && searchValue < 119) {
+                            moreInfo = "Pull Transactions from other servers: ";
+                        } else if (searchValue >= 200 && searchValue < 208) {
+                            moreInfo = "ApplyTransactions from !IP file: ";
+                        } else if (searchValue >=300 && searchValue < 307) {
+                            moreInfo = "CompressLogFile: ";
+                        }
+
+                        output.innerHTML = moreInfo  + obj.desc;
                         break;
                     } else {
                         output.innerHTML = "Please enter a valid phase";
@@ -208,10 +234,9 @@ function ajaxCall(dataUrl, callback) {
 
 
             }); // end AJAX call
+ 
+ } // end phaseSearch
 
-        } // end phaseSearch
-    
-        
     }; // end genricError
 
     
