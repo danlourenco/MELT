@@ -50,7 +50,7 @@ function ajaxCall(dataUrl, callback) {
 (function () {
 	
 	var button = document.getElementById("convert"),
-	    hexVal = document.getElementById("hex"),
+        hexVal = document.getElementById("hex"),
         decVal = document.getElementById("result"),
 		target = document.getElementById("errordesc"),
         anpErrorNumber = document.getElementById("anpErrNum"),
@@ -73,12 +73,12 @@ function ajaxCall(dataUrl, callback) {
            
             },
 
-		    // search method
-		    search: function (event) {
+            // search method
+            search: function (event) {
 
-			    var output = document.getElementById("errordesc");
+                var output = document.getElementById("errordesc");
 
-			    ajaxCall('data/errorcodes.json', function (data) {
+                ajaxCall('data/errorcodes.json', function (data) {
 
                     var winErrorCodes = data.winErrCodes,	// "data" is the contents of the JSON file, "errorCodes" is the Win32 error object inside. 
                         count = winErrorCodes.length,
@@ -99,11 +99,11 @@ function ajaxCall(dataUrl, callback) {
                         
                     } // end if count check
 
-			    }); // end AJAX call
+                }); // end AJAX call
                 
-		    } // end search method
+            } // end search method
         
-	    }; // end winError object
+        }; // end winError object
     
 
     var genericError = {
@@ -167,8 +167,11 @@ function ajaxCall(dataUrl, callback) {
                         }
 
                         break;
+                    
                     } else {
-                        errorType.output.innerHTML = "Please enter a valid error code."
+                    
+                        errorType.output.innerHTML = "Please enter a valid error code.";
+                    
                     }
                 } // end for
 
@@ -208,10 +211,9 @@ function ajaxCall(dataUrl, callback) {
 
 
             }); // end AJAX call
+ 
+ } // end phaseSearch
 
-        } // end phaseSearch
-    
-        
     }; // end genricError
 
     
