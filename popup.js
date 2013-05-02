@@ -168,7 +168,6 @@ function ajaxCall(dataUrl, callback) {
                         break;
                     
                     } else {
-
                         $(".phase").hide();
                         $("#phase").innerHTML = "";
                         errorType.output.innerHTML = "Please enter a valid error code.";
