@@ -5,7 +5,7 @@
 function getHTTPObject() {
 
     var xhr = new XMLHttpRequest();
-    
+
     // spit out the correct one so we can use it
     return xhr;
 }
@@ -13,24 +13,23 @@ function getHTTPObject() {
 /* define the Ajax call */
 
 function ajaxCall(dataUrl, callback) {
-    
+
     /* use our function to get the correct Ajax object based on support */
     var request = getHTTPObject();
-    
-      
+
     request.onreadystatechange = function () {
-        
+   
         // check to see if the Ajax call went through
         if (request.readyState === 4 && request.status === 200) {
-            
+
             // save the ajax response to a variable
             var data = JSON.parse(request.responseText);
-            
+
             // make sure the callback is indeed a function before executing it
             if (typeof callback === "function") {
-            
+
                 callback(data);
-            
+
             } // end check
     
         } // end ajax status check
@@ -48,7 +47,7 @@ function ajaxCall(dataUrl, callback) {
 // begin IIFE (immediately invoked function expression)
 // http://benalman.com/news/2010/11/immediately-invoked-function-expression/
 (function () {
-	
+
 	var button = document.getElementById("convert"),
         hexVal = document.getElementById("hex"),
         decVal = document.getElementById("result"),
@@ -169,15 +168,15 @@ function ajaxCall(dataUrl, callback) {
                         break;
                     
                     } else {
-<<<<<<< HEAD
+
                         $(".phase").hide();
                         $("#phase").innerHTML = "";
-                        errorType.output.innerHTML = "Please enter a valid error code."
-=======
+                        errorType.output.innerHTML = "Please enter a valid error code.";
+
                     
                         errorType.output.innerHTML = "Please enter a valid error code.";
                     
->>>>>>> 57da068bbc6e0069870b865ce29642d57433d02e
+
                     }
                 } // end for
 
@@ -213,19 +212,24 @@ function ajaxCall(dataUrl, callback) {
                 for (i = 0; i < count; i++) {
                     var obj = phaseData[i];
 
-                    var moreInfo = "";
+                   
 
                     if (obj.code === searchValue) {
 
-                        if (searchValue > 100 && searchValue < 119) {
-                            moreInfo = "Pull Transactions from other servers: ";
-                        } else if (searchValue >= 200 && searchValue < 208) {
-                            moreInfo = "ApplyTransactions from !IP file: ";
-                        } else if (searchValue >=300 && searchValue < 307) {
-                            moreInfo = "CompressLogFile: ";
-                        }
+                        // if ((anpErrorNumber.value === "5") && (searchValue > 100 && searchValue < 119) {
+                        //     moreInfo = "Pull Transactions from other servers: ";
+                        //     output.innerHTML = moreInfo  + obj.desc;
+                        // } else if ((anpErrorNumber.value === "5") && (searchValue >= 200 && searchValue < 208)) {
+                        //     moreInfo = "ApplyTransactions from !IP file: ";
+                        //     output.innerHTML = moreInfo  + obj.desc;
+                        // } else if ((anpErrorNumber.value === "5") && (searchValue >=300 && searchValue < 307)) {
+                        //     moreInfo = "CompressLogFile: ";
+                        //     output.innerHTML = moreInfo  + obj.desc;
+                        // } else {
+                        //     moreInfo = "";
+                        // }
 
-                        output.innerHTML = moreInfo  + obj.desc;
+                        output.innerHTML = obj.desc;
                         break;
                     } else {
                         output.innerHTML = "Please enter a valid phase";
