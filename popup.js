@@ -47,6 +47,7 @@ function ajaxCall(dataUrl, callback) {
 (function () {
 
 	var button = document.getElementById("convert"),
+        winErrButton = document.getElementById("winErrButton"),
         hexVal = document.getElementById("hex"),
         decValue = document.getElementById("result"),
 		target = document.getElementById("errordesc"),
@@ -68,6 +69,10 @@ function ajaxCall(dataUrl, callback) {
       
                 // parseInt function converts to hex when second argument = 16
                 var dec = parseInt(hexVal.value, 16);
+                if (isNaN(dec)) {
+                    decValue.value = "";
+                    return;
+                } 
                 decValue.value = dec;
            
             },
@@ -250,7 +255,7 @@ function ajaxCall(dataUrl, callback) {
     
 
 	hexVal.addEventListener("keyup", winError.conversion, false);
-    decValue.addEventListener("input", genericError.search, false);
+    winErrButton.addEventListener("click", genericError.search, false);
   
     anpErrorNumber.addEventListener("keyup", genericError.search, false);
     phaseNumber.addEventListener("keyup", genericError.phaseSearch, false);
