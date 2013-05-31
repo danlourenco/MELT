@@ -1,5 +1,4 @@
 // *****   AJAX STUFF   *************************************************************** 
-
 /* standard Ajax xhr function */
 
 function getHTTPObject() {
@@ -43,23 +42,24 @@ function ajaxCall(dataUrl, callback) {
 
 // *****  /AJAX STUFF   *************************************************************** 
 
-
 // begin IIFE (immediately invoked function expression)
 // http://benalman.com/news/2010/11/immediately-invoked-function-expression/
 (function () {
 
 	var button = document.getElementById("convert"),
         hexVal = document.getElementById("hex"),
-        decVal = document.getElementById("result"),
+        decValue = document.getElementById("result"),
 		target = document.getElementById("errordesc"),
         anpErrorNumber = document.getElementById("anpErrNum"),
         taskServerErrorNumber = document.getElementById("taskServerErrNum"),
         winsockErrorNumber = document.getElementById("winsockErrNum"),
+        errMsg = "Please enter in a valid value, fool.",
         phaseNumber = document.getElementById("phaseField");
+
     
         $( "#tabs" ).tabs({ heightStyle: "auto" });
         $(".phase").hide();
-  
+        
 
 	var winError = {
 
@@ -68,7 +68,7 @@ function ajaxCall(dataUrl, callback) {
       
                 // parseInt function converts to hex when second argument = 16
                 var dec = parseInt(hexVal.value, 16);
-                decVal.value = dec;
+                decValue.value = dec;
            
             },
 
@@ -85,13 +85,15 @@ function ajaxCall(dataUrl, callback) {
                         searchValue = decVal.value;
 
                     if (count > 0 && searchValue !== "") {
-          
+                        console.log("count: " + count);
                         for (i = 0; i < count; i++) {
                             var obj = winErrorCodes[i];
             
                             if (obj.code === searchValue) {
                                 output.innerHTML = obj.desc;
                                 break;
+                            } else {
+                                alert("Can't find dat shiz.");
                             }
            
                         } // end for loop
@@ -123,7 +125,9 @@ function ajaxCall(dataUrl, callback) {
                 // http://training.bocoup.com/screencasts/dry-out-your-code-with-objects/
                 var errorTypes = {
                     0 : {
-                        errorCodes : data.winErrCodes
+                        errorCodes : data.winErrCodes,
+                        searchValue: decValue.value,
+                        output: document.getElementById("errordesc")
                     },
                     1 : {
                          errorCodes : data.anpCodes,
@@ -229,6 +233,7 @@ function ajaxCall(dataUrl, callback) {
                         // }
 
                         output.innerHTML = obj.desc;
+                      
                         break;
                     } else {
                         output.innerHTML = "Please enter a valid phase";
@@ -245,12 +250,13 @@ function ajaxCall(dataUrl, callback) {
     
 
 	hexVal.addEventListener("keyup", winError.conversion, false);
-    hexVal.addEventListener("keyup", winError.search, false);
-
+    decValue.addEventListener("input", genericError.search, false);
+  
     anpErrorNumber.addEventListener("keyup", genericError.search, false);
     phaseNumber.addEventListener("keyup", genericError.phaseSearch, false);
     taskServerErrorNumber.addEventListener("keyup", genericError.search, false);
     winsockErrorNumber.addEventListener("keyup", genericError.search, false);
+    
   
 })(); //end anonymous function
 

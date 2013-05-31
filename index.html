@@ -12,6 +12,7 @@
     <script src="js/jquery-ui-1.9.2.custom.js"></script>
     
   </head>
+  
   <body>
     <!--<h1>MELT - MEDITECH Error Lookup Tool</h1> -->
     
@@ -29,18 +30,18 @@
     <div id="tabs-1">
       <p> Enter a Windows Error number (hex) in the field below.  The error you enter will be converted to decimal, and will be described in the description field below.
       <form>
-          <label for="hex">Hex</label><br>
+          
           <input type="text" placeholder="Hex Number" id="hex" size="12">
 
-          <br><br>
+          <input type="text" placeholder="Decimal Number" id="result" size="12">
+            <input id="winErrButton" type="button" value="Search!" />
           
-          <label for="result">Decimal</label><br><input type="text" id="result" size="12">
-
-          <br><br>
+          <br>
 
           <label for="errordesc">Description</label><br>
-          <textarea id="errordesc" cols="54" rows="4"> </textarea>
+          <textarea placeholder="Description" id="errordesc" cols="54" rows="4"> </textarea>
          <!--  <textarea id="errordesc" cols="50" rows="3"></textarea> -->
+
         </form>
 
 
@@ -105,10 +106,6 @@
 
      </div>
   
-
-
-
-
      <!-- JavaScript and HTML must be in separate files for security. -->
      <script src="popup.js"></script> 
       
