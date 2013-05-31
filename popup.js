@@ -60,7 +60,12 @@ function ajaxCall(dataUrl, callback) {
     
         $( "#tabs" ).tabs({ heightStyle: "auto" });
         $(".phase").hide();
-        
+        $(function() {
+            $('form').superLabels({
+                labelLeft:50,
+                labelTop:3
+            });
+        });
 
 	var winError = {
 
