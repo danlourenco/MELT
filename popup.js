@@ -60,12 +60,7 @@ function ajaxCall(dataUrl, callback) {
     
         $( "#tabs" ).tabs({ heightStyle: "auto" });
         $(".phase").hide();
-        $(function() {
-            $('form').superLabels({
-                labelLeft:50,
-                labelTop:3
-            });
-        });
+       
 
 	var winError = {
 
@@ -123,7 +118,7 @@ function ajaxCall(dataUrl, callback) {
         search: function (event) {
         
             var $tabs = $('#tabs').tabs(),
-                selected = $tabs.tabs('option', 'selected');
+                selected = $tabs.tabs('option', 'active');
                 // output,
                 // errorCodes,
                 // searchValue;
