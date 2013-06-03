@@ -27,31 +27,31 @@
 
     <!-- Windows Error Lookup Tab -->
     <div id="tabs-1">
-      <p> Enter a Windows Error number (hex) in the field below.  The error you enter will be converted to decimal, and will be described in the description field below.
+      
       <form>
-        <ul>
-          <li>
+        
             <label for="hex">Hex</label>
-            <input type="text" id="hex" name="hex" size="25">
-          </li>
+            <input type="text" id="hex" name="hex" size="25" autofocus>
+        
 
-          <li>
-            <label for="result">Decimal</label>
+     
+          <label for="result">Decimal</label>
           <input type="text" id="result" name="result" size="25">
-            
-          </li>
-        </ul>
-         
-        <input id="winErrButton" type="button" value="Search!" />
-          
-          
-          <br>
+    
+      <input id="winErrButton" type="button" value="Search!" />
 
-          <label for="errordesc">Description</label><br>
-          <textarea placeholder="Description" id="errordesc" cols="55" rows="4"> </textarea>
-         <!--  <textarea id="errordesc" cols="50" rows="3"></textarea> -->
 
-        </form>
+      <br>
+
+      <label for="errordesc">Description</label><br>
+      <textarea placeholder="Description" id="errordesc" cols="55" rows="4"> </textarea>
+      <!--  <textarea id="errordesc" cols="50" rows="3"></textarea> -->
+
+      </form>
+
+      <div class="description">
+        <p>testing</p>
+      </div>
 
 
     </div> <!-- /Windows Error Lookup -->

@@ -19,7 +19,6 @@ h1{
   font-family: Helvetica;
 }
 
-
 .visuallyhidden { 
   position: absolute; 
   overflow: hidden; 
@@ -28,10 +27,41 @@ h1{
   margin: -1px; padding: 0; border: 0; 
 }
 
-ul {
-  list-style-type: none;
-  padding, margin: 0;
+
+
+form {
+  width:300px;
+  margin: 20px auto;
 }
-ul li {
-  position:relative;
+
+input[type="text"] {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border:1px solid #ccc;
+  font-size:20px;
+  width:300px;
+  min-height:30px;
+  display:block;
+  margin-bottom:15px;
+  margin-top:5px;
+  outline: none;
+
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -o-border-radius:5px;
+  -ms-border-radius:5px;
+  border-radius:5px;
+}
+
+input[type="button"] {
+  margin-top: 15px;
+  width: 300px;
+  min-height: 30px;
+
+}
+
+.description {
+  width: 300px;
+  margin: 20px auto;
+  border:1px solid #ccc;
+  -webkit-border-radius:5px;
 }
