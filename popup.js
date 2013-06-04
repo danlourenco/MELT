@@ -60,7 +60,7 @@ function ajaxCall(dataUrl, callback) {
     
         $( "#tabs" ).tabs({ heightStyle: "auto" });
         $(".phase").hide();
-       
+        $(".description").hide();
 
 	var winError = {
 
@@ -75,13 +75,13 @@ function ajaxCall(dataUrl, callback) {
                 } 
                 decValue.value = dec;
            
-            },
+            }
 
             // search method
+        /*
             search: function (event) {
 
                 var output = document.getElementById("errordesc");
-
                 ajaxCall('data/errorcodes.json', function (data) {
 
                     var winErrorCodes = data.winErrCodes,	// "data" is the contents of the JSON file, "errorCodes" is the Win32 error object inside. 
@@ -96,6 +96,7 @@ function ajaxCall(dataUrl, callback) {
             
                             if (obj.code === searchValue) {
                                 output.innerHTML = obj.desc;
+                                 
                                 break;
                             } else {
                                 alert("Can't find dat shiz.");
@@ -108,7 +109,7 @@ function ajaxCall(dataUrl, callback) {
                 }); // end AJAX call
                 
             } // end search method
-        
+        */
         }; // end winError object
     
 
@@ -163,6 +164,7 @@ function ajaxCall(dataUrl, callback) {
 
                     if (obj.code === errorType.searchValue) {
                         errorType.output.innerHTML = obj.desc;
+                         $(".description").show( "fold", 1000 );
                        
                         if ((selected === 1) && (errorType.searchValue === "3" || errorType.searchValue === "5")) {
                         
@@ -180,10 +182,6 @@ function ajaxCall(dataUrl, callback) {
                         $(".phase").hide();
                         $("#phase").innerHTML = "";
                         errorType.output.innerHTML = "Please enter a valid error code.";
-
-                    
-                        errorType.output.innerHTML = "Please enter a valid error code.";
-                    
 
                     }
                 } // end for
