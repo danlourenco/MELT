@@ -77,39 +77,6 @@ function ajaxCall(dataUrl, callback) {
            
             }
 
-            // search method
-        /*
-            search: function (event) {
-
-                var output = document.getElementById("errordesc");
-                ajaxCall('data/errorcodes.json', function (data) {
-
-                    var winErrorCodes = data.winErrCodes,	// "data" is the contents of the JSON file, "errorCodes" is the Win32 error object inside. 
-                        count = winErrorCodes.length,
-                        i,
-                        searchValue = decVal.value;
-
-                    if (count > 0 && searchValue !== "") {
-                        console.log("count: " + count);
-                        for (i = 0; i < count; i++) {
-                            var obj = winErrorCodes[i];
-            
-                            if (obj.code === searchValue) {
-                                output.innerHTML = obj.desc;
-                                 
-                                break;
-                            } else {
-                                alert("Can't find dat shiz.");
-                            }
-           
-                        } // end for loop
-                        
-                    } // end if count check
-
-                }); // end AJAX call
-                
-            } // end search method
-        */
         }; // end winError object
     
 
@@ -207,36 +174,16 @@ function ajaxCall(dataUrl, callback) {
                 if (anpErrorNumber.value === "3") {
                     phaseData = data.event3phase;
                 } 
-
                 if (anpErrorNumber.value === "5") {
                     phaseData = data.event5phase;
-
                 }
 
                 count = phaseData.length;
 
                 for (i = 0; i < count; i++) {
                     var obj = phaseData[i];
-
-                   
-
                     if (obj.code === searchValue) {
-
-                        // if ((anpErrorNumber.value === "5") && (searchValue > 100 && searchValue < 119) {
-                        //     moreInfo = "Pull Transactions from other servers: ";
-                        //     output.innerHTML = moreInfo  + obj.desc;
-                        // } else if ((anpErrorNumber.value === "5") && (searchValue >= 200 && searchValue < 208)) {
-                        //     moreInfo = "ApplyTransactions from !IP file: ";
-                        //     output.innerHTML = moreInfo  + obj.desc;
-                        // } else if ((anpErrorNumber.value === "5") && (searchValue >=300 && searchValue < 307)) {
-                        //     moreInfo = "CompressLogFile: ";
-                        //     output.innerHTML = moreInfo  + obj.desc;
-                        // } else {
-                        //     moreInfo = "";
-                        // }
-
                         output.innerHTML = obj.desc;
-                      
                         break;
                     } else {
                         output.innerHTML = "Please enter a valid phase";

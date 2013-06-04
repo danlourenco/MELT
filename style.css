@@ -31,7 +31,8 @@ h1{
 
 form {
   width:300px;
-  margin: 20px auto;
+  /*margin: 20px auto; */
+  position: relative;
 }
 
 label {
@@ -64,7 +65,12 @@ input[type="button"] {
 
 .description {
   width: 300px;
-  margin: 20px auto;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  font-style: italic;
+  
+  /*margin: 20px auto;
   border:1px solid #ccc;
   -webkit-border-radius:5px;
 }
