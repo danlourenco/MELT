@@ -28,13 +28,11 @@
     <!-- Windows Error Lookup Tab -->
     <div id="tabs-1">
       
+      <h3>Windows Error Code Lookup </h3>
       <form>
-        
-            <label for="hex">Hex</label>
-            <input type="text" id="hex" name="hex" size="25" autofocus>
-        
-
-     
+          <label for="hex">Hex</label>
+          <input type="text" id="hex" name="hex" size="25" autofocus>
+      
           <label for="result">Decimal</label>
           <input type="text" id="result" name="result" size="25">
     
@@ -44,7 +42,6 @@
       </form>
 
       <div class="description">
-        
         <p id="errordesc"></p>
       </div>
 
@@ -59,23 +56,16 @@
         <label for="anpErrNum">Event ID</label> <br>
         <input type="text" placeholder="" id="anpErrNum">
 
-        <br><br>
-
         <label for="phaseField" class="phase">Phase</label><br>
         <input type="text" class="phase" placeholder="" id="phaseField">
-
-        <br><br>
-          
-        <div class="description">
-          <p id="errordescANP"></p>
-        </div>
-       
-        <br><br> 
+      </form>
 
         <label for="phaseInfo" class="phase">Phase Info</label><br>
         <textarea id="phaseInfo" class="phase" cols="54" rows="4"> </textarea>
-      </form>
 
+        <div class="description">
+          <p id="errordescANP"></p>
+        </div>
 
     </div> <!-- /ANP Error Lookup Tab -->
 
@@ -85,13 +75,12 @@
       <h3>TaskServer Error Lookup </h3>
       <form>
         <label for ="taskServerErrNum">Task Server Error Number</label> <br>
-        <input type="text" placeholder="" id="taskServerErrNum">
-
-        <br><br>
-
-          <label for="errorDescTaskServer">Description</label><br>
-          <textarea id="errorDescTaskServer" cols="54" rows="4"> </textarea>
+        <input type="text" placeholder="" id="taskServerErrNum">          
       </form>
+
+      <div class="description">
+        <p id="errorDescTaskServer"></p>
+      </div>
     
     </div>
 
@@ -102,12 +91,11 @@
       <form>
         <label for ="winsockErrNum">Winsock Error Number</label> <br>
         <input type="text" placeholder="" id="winsockErrNum">
-
-        <br><br>
-
-          <label for="winsockErrDesc">Description</label><br>
-          <textarea id="winsockErrDesc" cols="54" rows="8"> </textarea>
       </form>
+
+      <div class="description">
+        <p id="winsockErrDesc"></p>
+      </div>
 
      </div>
   

@@ -59,14 +59,13 @@ function ajaxCall(dataUrl, callback) {
 
     
         $( "#tabs" ).tabs({ heightStyle: "auto" });
-        $(".phase").hide();
-        $(".description").hide();
+    /*    $(".phase").hide();
+        $(".description").hide();  */
 
 	var winError = {
 
     //conversion method.
             conversion: function () {
-      
                 // parseInt function converts to hex when second argument = 16
                 var dec = parseInt(hexVal.value, 16);
                 if (isNaN(dec)) {
@@ -74,9 +73,7 @@ function ajaxCall(dataUrl, callback) {
                     return;
                 } 
                 decValue.value = dec;
-           
             }
-
         }; // end winError object
     
 
@@ -121,11 +118,9 @@ function ajaxCall(dataUrl, callback) {
                 };
                 
                 var errorType = errorTypes[ selected ];
-
                 var count = errorType.errorCodes.length,
                     i;
 
-               
                 for (i = 0; i < count; i++) {
                     var obj = errorType.errorCodes[i];
 
@@ -149,10 +144,8 @@ function ajaxCall(dataUrl, callback) {
                         $(".phase").hide();
                         $("#phase").innerHTML = "";
                         errorType.output.innerHTML = "Please enter a valid error code.";
-
                     }
                 } // end for
-
 
             }); // end AJAX call
     
@@ -161,8 +154,6 @@ function ajaxCall(dataUrl, callback) {
         phaseSearch: function(event) {
             
             var output = document.getElementById("phaseInfo");
-
-
 
             ajaxCall('data/errorcodes.json', function (data) {
 
@@ -197,8 +188,6 @@ function ajaxCall(dataUrl, callback) {
 
     }; // end genricError
 
-    
-
 	hexVal.addEventListener("keyup", winError.conversion, false);
     winErrButton.addEventListener("click", genericError.search, false);
   
@@ -206,8 +195,6 @@ function ajaxCall(dataUrl, callback) {
     phaseNumber.addEventListener("keyup", genericError.phaseSearch, false);
     taskServerErrorNumber.addEventListener("keyup", genericError.search, false);
     winsockErrorNumber.addEventListener("keyup", genericError.search, false);
-    
-  
 })(); //end anonymous function
 
 
