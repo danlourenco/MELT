@@ -59,8 +59,9 @@ function ajaxCall(dataUrl, callback) {
 
     
         $( "#tabs" ).tabs({ heightStyle: "auto" });
-    /*    $(".phase").hide();
-        $(".description").hide();  */
+        $(".phase").hide();
+        $(".description").hide();  
+      
 
 	var winError = {
 
@@ -132,10 +133,11 @@ function ajaxCall(dataUrl, callback) {
                         
 
                             $(".phase").show();
-                            
+                         
                         } else {
                             $(".phase").innerHTML = "";
                             $(".phase").hide();
+                            
                         }
 
                         break;
@@ -174,10 +176,10 @@ function ajaxCall(dataUrl, callback) {
                 for (i = 0; i < count; i++) {
                     var obj = phaseData[i];
                     if (obj.code === searchValue) {
-                        output.innerHTML = obj.desc;
+                        output.innerHTML = "<h4>Phase Info</h4>" + obj.desc;
                         break;
                     } else {
-                        output.innerHTML = "Please enter a valid phase";
+                        output.innerHTML = "<h4>Please enter a valid phase</h4>";
                     }
                 }
 

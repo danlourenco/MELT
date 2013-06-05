@@ -6,8 +6,11 @@ body {
   font-size: 0.6em;
   display: block;
   margin: 8px;
-  height:800px;
+}
 
+#tabs-1 {
+    min-height: 300px;
+    width: 600px;
 }
 
 
@@ -29,13 +32,14 @@ h1{
 form {
   width:300px;
   /*margin: 20px auto; */
+  float:left;
   
 }
 
 label {
     font-style:italic;
 }
-input[type="text"] {
+input[type="text"], input[type="number"] {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border:1px solid #ccc;
   font-size:20px;
@@ -63,7 +67,7 @@ input[type="text"] {
 .description {
   width: 300px;
   font-style: italic;
-  
+  float:right;
   /*margin: 20px auto;
   border:1px solid #ccc;
   -webkit-border-radius:5px;

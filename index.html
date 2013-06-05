@@ -54,18 +54,20 @@
       <h3>ANP Event Log Error Lookup</h3>
       <form>
         <label for="anpErrNum">Event ID</label> <br>
-        <input type="text" placeholder="" id="anpErrNum">
+        <input type="number" min="0" max="15" id="anpErrNum">
 
         <label for="phaseField" class="phase">Phase</label><br>
         <input type="text" class="phase" placeholder="" id="phaseField">
+       
       </form>
-
-        <label for="phaseInfo" class="phase">Phase Info</label><br>
-        <textarea id="phaseInfo" class="phase" cols="54" rows="4"> </textarea>
-
+        
         <div class="description">
           <p id="errordescANP"></p>
+            
+          <p id="phaseInfo"></p>
         </div>
+
+
 
     </div> <!-- /ANP Error Lookup Tab -->
 
