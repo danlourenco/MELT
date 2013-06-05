@@ -8,7 +8,7 @@ body {
   margin: 8px;
 }
 
-#tabs-1 {
+#tabs {
     min-height: 300px;
     width: 600px;
 }
@@ -30,7 +30,7 @@ h1{
 
 
 form {
-  width:300px;
+  width:200px;
   /*margin: 20px auto; */
   float:left;
   
@@ -43,7 +43,7 @@ input[type="text"], input[type="number"] {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border:1px solid #ccc;
   font-size:20px;
-  width:250px;
+  width:150px;
   min-height:30px;
   display:block;
   margin-bottom:15px;

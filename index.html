@@ -54,7 +54,7 @@
       <h3>ANP Event Log Error Lookup</h3>
       <form>
         <label for="anpErrNum">Event ID</label> <br>
-        <input type="number" min="0" max="15" id="anpErrNum">
+        <input type="number" value="0" min="0" max="15" id="anpErrNum">
 
         <label for="phaseField" class="phase">Phase</label><br>
         <input type="text" class="phase" placeholder="" id="phaseField">
@@ -77,7 +77,8 @@
       <h3>TaskServer Error Lookup </h3>
       <form>
         <label for ="taskServerErrNum">Task Server Error Number</label> <br>
-        <input type="text" placeholder="" id="taskServerErrNum">          
+        <input type="number" value="0" min="0" max="13" id="taskServerErrNum"> 
+         <input id="taskServerErrButton" type="button" value="Search!" />         
       </form>
 
       <div class="description">

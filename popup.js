@@ -48,6 +48,7 @@ function ajaxCall(dataUrl, callback) {
 
 	var button = document.getElementById("convert"),
         winErrButton = document.getElementById("winErrButton"),
+        taskServerErrButton = document.getElementById("taskServerErrButton"),
         hexVal = document.getElementById("hex"),
         decValue = document.getElementById("result"),
 		target = document.getElementById("errordesc"),
@@ -127,7 +128,7 @@ function ajaxCall(dataUrl, callback) {
 
                     if (obj.code === errorType.searchValue) {
                         errorType.output.innerHTML = obj.desc;
-                         $(".description").show( "fold", 1000 );
+                         $(".description").show();
                        
                         if ((selected === 1) && (errorType.searchValue === "3" || errorType.searchValue === "5")) {
                         
@@ -195,7 +196,7 @@ function ajaxCall(dataUrl, callback) {
   
     anpErrorNumber.addEventListener("keyup", genericError.search, false);
     phaseNumber.addEventListener("keyup", genericError.phaseSearch, false);
-    taskServerErrorNumber.addEventListener("keyup", genericError.search, false);
+    taskServerErrButton.addEventListener("click", genericError.search, false);
     winsockErrorNumber.addEventListener("keyup", genericError.search, false);
 })(); //end anonymous function
 
