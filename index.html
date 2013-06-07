@@ -32,7 +32,7 @@
       <h3>Windows Error Code Lookup </h3>
       <form>
           <label for="hex">Hex</label>
-          <input type="text" id="hex" name="hex" size="25" autofocus>
+          <input type="text" id="hex" name="hex" size="25" >
       
           <label for="result">Decimal</label>
           <input type="text" id="result" name="result" size="25">
@@ -67,9 +67,6 @@
             
           <p id="phaseInfo"></p>
         </div>
-
-
-
     </div> <!-- /ANP Error Lookup Tab -->
 
 
@@ -79,7 +76,7 @@
       <form>
         <label for ="taskServerErrNum">Task Server Error Number</label> <br>
         <input type="number" value="0" min="0" max="13" id="taskServerErrNum"> 
-         <input id="taskServerErrButton" type="button" value="Search!" />         
+         <!--<input id="taskServerErrButton" type="button" value="Search!" />-->         
       </form>
 
       <div class="description">
@@ -95,6 +92,8 @@
       <form>
         <label for ="winsockErrNum">Winsock Error Number</label> <br>
         <input type="text" placeholder="" id="winsockErrNum">
+
+         <input id="winsockErrButton" type="button" value="Search!" />
       </form>
 
       <div class="description">

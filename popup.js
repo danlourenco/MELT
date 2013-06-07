@@ -55,6 +55,7 @@ function ajaxCall(dataUrl, callback) {
         anpErrorNumber = document.getElementById("anpErrNum"),
         taskServerErrorNumber = document.getElementById("taskServerErrNum"),
         winsockErrorNumber = document.getElementById("winsockErrNum"),
+        winsockErrButton = document.getElementById("winsockErrButton"),
         errMsg = "Please enter in a valid value, fool.",
         phaseNumber = document.getElementById("phaseField");
 
@@ -146,7 +147,7 @@ function ajaxCall(dataUrl, callback) {
                     } else {
                         $(".phase").hide();
                         $("#phase").innerHTML = "";
-                        errorType.output.innerHTML = "Please enter a valid error code.";
+                        errorType.output.innerHTML = '<h3 style="color:red;">Not a valid number</h3>';
                     }
                 } // end for
 
@@ -180,7 +181,7 @@ function ajaxCall(dataUrl, callback) {
                         output.innerHTML = "<h4>Phase Info</h4>" + obj.desc;
                         break;
                     } else {
-                        output.innerHTML = "<h4>Please enter a valid phase</h4>";
+                        output.innerHTML = "<h3 style='color:red;''>Please enter a valid phase</h3>";
                     }
                 }
 
@@ -194,10 +195,10 @@ function ajaxCall(dataUrl, callback) {
 	hexVal.addEventListener("keyup", winError.conversion, false);
     winErrButton.addEventListener("click", genericError.search, false);
   
-    anpErrorNumber.addEventListener("keyup", genericError.search, false);
+    anpErrorNumber.addEventListener("input", genericError.search, false);
     phaseNumber.addEventListener("keyup", genericError.phaseSearch, false);
-    taskServerErrButton.addEventListener("click", genericError.search, false);
-    winsockErrorNumber.addEventListener("keyup", genericError.search, false);
+    taskServerErrorNumber.addEventListener("input", genericError.search, false);
+    winsockErrButton.addEventListener("click", genericError.search, false);
 })(); //end anonymous function
 
 
